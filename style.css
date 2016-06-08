@@ -78,7 +78,7 @@ button{
   color: purple;
   display: block;
 }
-.teamText{
+.teamText .pplText{
   width: 100px;
   height: 25px;
   color: purple;

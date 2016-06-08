@@ -21,9 +21,9 @@ function addStudent(){
   document.querySelector('#button3').style.display = "initial";
   var str = document.querySelector(".nameText").value;
   var s = str.split(",");
-  s = s.map(funciton(wo){
-      return word.trim();
-  });
+  // s = s.map(funciton(wo){
+  //     return word.trim();
+  // });
   //console.log(s);
   if(s.length>0){
 
@@ -75,12 +75,13 @@ function shuffleArray(arr) {
 }
 
 function chuck(arr, num){
-  var arrays = [];
+  var arraysChuck = [];
   while (arr.length){
     var chunk = arr.splice(0,num);
-    arrays.push(chunk);
+    arraysChuck.push(chunk);
   }
-  return arrays;
+  //console.log("arraysChuck",arraysChuck)
+  return arraysChuck;
 }
 
 function addppl(){
@@ -97,13 +98,13 @@ function addppl(){
   var student3 = student.slice();
   var student2 = shuffleArray(student3);
   console.log("student2: "+student2);
-  var arrays = chuck(student2, parseInt(num));
+  //var arrays = chuck(student2, parseInt(num));
+  var arr = chuck(student2, parseInt(num));
+  console.log("arrays: ", arr);
 
-  console.log("arrays: "+arrays);
 
-/*
-  for(var i=0;i<arrays.length;i++){
-      console.log(arrays[i]);
+  for(var i=0;i<arr.length;i++){
+      console.log(arr[i]);
 
       var p = document.createElement('p');
       var nameOfTeam = "Team: "+(i+1);
@@ -118,9 +119,9 @@ function addppl(){
       el.classList.add("tm");
       document.querySelector('#listTeam').appendChild(el);
 
-      for(var j=0;j<arrays[i].length;j++){
-        console.log(arrays[i][j]);
-        var jackPotPerson = arrays[i][j];
+      for(var j=0;j<arr[i].length;j++){
+        console.log(arr[i][j]);
+        var jackPotPerson = arr[i][j];
         var ele = document.createElement('div');
        // className = 
         ele.classList.add("tm");
@@ -131,7 +132,7 @@ function addppl(){
       }
       var hr = document.createElement('hr');
       document.querySelector('#listTeam').appendChild(hr);
-    }*/
+    }
 }
 
 function addTeam(){
